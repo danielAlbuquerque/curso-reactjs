@@ -56,11 +56,42 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	_reactDom2.default.render(_react2.default.createElement(
-	    'h1',
-	    { id: 'meuTitulo' },
-	    'Hello World!'
-	), document.getElementById('app'));
+	var TextCounter = _react2.default.createClass({
+		displayName: 'TextCounter',
+	
+	
+		getInitialState: function getInitialState() {
+			return { totalChars: 0 };
+		},
+	
+		handleChange: function handleChange(event) {
+			var element = event.target;
+			var text = element.value;
+			this.setState({ totalChars: text.length });
+		},
+	
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement('textarea', { onChange: this.handleChange }),
+				_react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						'b',
+						null,
+						'Total:'
+					),
+					' ',
+					this.state.totalChars,
+					' '
+				)
+			);
+		}
+	});
+	
+	(0, _reactDom.render)(_react2.default.createElement(TextCounter, null), document.getElementById('app'));
 
 /***/ },
 /* 1 */
