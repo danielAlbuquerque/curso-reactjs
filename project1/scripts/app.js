@@ -1,28 +1,36 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { render } from 'react-dom';
 
-var TextCounter = React.createClass({
-	
-	getInitialState: function() {
-		return {totalChars: 0}
-	},
 
-	handleChange: function(event) {
+class TextCounter extends React.Component {
+
+	static defaultProps = {
+
+	}
+
+	state = {
+		totalChars: 0
+	}
+
+	construtor(props) {
+
+	}
+
+	handleChange = (event) => {
 		var element = event.target;
-		var text = element.value;
-		this.setState({totalChars: text.length});
-	},
+		var totalChars = element.value.length;
+		this.setState({totalChars: totalChars});
+	}
 
-	render: function() {
+	render() {
 		return(
 			<div>
-				<textarea onChange={this.handleChange}></textarea>
+				<textarea onChange={this.handleChange.bind(this)}></textarea>
 				<div><b>Total:</b> {this.state.totalChars} </div>
 			</div>
 		)
 	}
-});
+}
 
 render(
     <TextCounter />,
