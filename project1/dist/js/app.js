@@ -52,15 +52,15 @@
 	
 	var _reactDom = __webpack_require__(32);
 	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var minhaDiv = document.getElementById('app');
-	
-	_react2.default.render(_react2.default.createElement(
+	_reactDom2.default.render(_react2.default.createElement(
 	    'h1',
 	    { id: 'meuTitulo' },
 	    'Hello World!'
-	), minhaDiv);
+	), document.getElementById('app'));
 
 /***/ },
 /* 1 */

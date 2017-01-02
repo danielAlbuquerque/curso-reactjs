@@ -1,9 +1,9 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { render } from 'react-dom';
 
-var minhaDiv = document.getElementById('app');
 
-React.render(
+ReactDOM.render(
     <h1 id="meuTitulo" >Hello World!</h1>,
-    minhaDiv
+    document.getElementById('app')
 );
